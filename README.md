@@ -37,7 +37,9 @@ Steps to test the setup:
   
   --> run the application (use command --- mvn spring-boot:run)
     
-      you can observe that it is fetching propeties from github since this service is registered with config server
+    (you can observe that it is fetching propeties from github,
+      
+         since this service is registered with config server)
   
 5. naviagte to zuul-gateway
 
@@ -48,23 +50,24 @@ Steps to test the setup:
   
 Now all services are up and running
 
-1) open localhost:8761 in browser, then you can see eureka dashboard and two services(zuul-gateway & demo-mongo) are registered and status is UP.
+1)   open localhost:8761 in browser, then you can see eureka dashboard and two services(zuul-gateway & demo-mongo) are            
+     registered and status is UP.
 
-2) now test springboot demoMongoDb application 
+2)   now test springboot demoMongoDb application 
   
-  perform create operation using the url in browser
+     perform create operation using the url in browser
   
-  localhost:8080/create?firstName=firstnamedemo&lastName=lastnamedemo&age=25
+     localhost:8080/create?firstName=firstnamedemo&lastName=lastnamedemo&age=25
   
-  you can check by using url (to get all persons) --- 
+     you can check by using url (to get all persons) --- 
   
-  localhost:8080/getAll
+     localhost:8080/getAll
   
-3) now test api gateway 
+3)   now test api gateway 
 
-   use url -- localhost:8092/demo-mongo/getAll
+     use url -- localhost:8092/demo-mongo/getAll
    
-   it will route to localhost:8080/getAll and get you all persons details
+     it will route to localhost:8080/getAll and get you all persons details
   
   
   
