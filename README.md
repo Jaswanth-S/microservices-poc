@@ -13,42 +13,46 @@ This consists of :
 4. demoMongoDb (springboot application which performs CRUD operations on mongodb)
 
 
-Steps to test the setup:
+Steps to start the setup:
 
 1. make one docker container of mongodb running
 
-  command to use ---    docker run --name mongo -p 27107:27107 mongo
+    command to use ---    docker run --name mongo -p 27107:27107 mongo
   
 2. navigate to config-server ( cd config-server)
   
-  --> package the application (use command --- mvn clean compile package -DskipTests)
+    --> package the application (use command --- mvn clean compile package -DskipTests)
   
-  --> run the application (use command --- mvn spring-boot:run)
+    --> run the application (use command --- mvn spring-boot:run)
 
 3. navigate to eureka-server
 
-  --> package the application (use command --- mvn clean compile package -DskipTests)
+    --> package the application (use command --- mvn clean compile package -DskipTests)
   
-  --> run the application (use command --- mvn spring-boot:run)
+    --> run the application (use command --- mvn spring-boot:run)
   
 4. navigate to demoMongoDb
 
-  --> package the application (use command --- mvn clean compile package -DskipTests)
+    --> package the application (use command --- mvn clean compile package -DskipTests)
   
-  --> run the application (use command --- mvn spring-boot:run)
+    --> run the application (use command --- mvn spring-boot:run)
     
     (you can observe that it is fetching propeties from github,
       
-         since this service is registered with config server)
+      since this service is registered with config server)
   
 5. naviagte to zuul-gateway
 
-  --> package the application (use command --- mvn clean compile package -DskipTests)
+   --> package the application (use command --- mvn clean compile package -DskipTests)
   
-  --> run the application (use command --- mvn spring-boot:run)
+   --> run the application (use command --- mvn spring-boot:run)
   
   
 Now all services are up and running
+
+
+Steps to test the services:
+
 
 1)   open localhost:8761 in browser, then you can see eureka dashboard and two services(zuul-gateway & demo-mongo) are            
      registered and status is UP.
